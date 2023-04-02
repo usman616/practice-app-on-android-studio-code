@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+         />
+    <EditText
+        android:id="@+id/ET"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="Enter the Number  ."
+        android:backgroundTint="#E91E63"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:id="@+id/imggen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate img"
+        android:backgroundTint="#1D4D63"
+        android:textColor="@color/white"
+        />
+        
+        //Androidmainfest.xml
+        <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/iconapp"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Practiceapp"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+//mainactivity.java
+package com.example.practiceapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button gn=findViewById(R.id.imggen);
+        EditText en=findViewById(R.id.ET);
+        ImageView im=findViewById(R.id.show);
+        gn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(en.getText().toString().equals("one"))
+                {
+                    im.setImageResource(R.drawable.one);
+                }
+                else if (en.getText().toString().equals("two"))
+                {
+                    im.setImageResource(R.drawable.two);
+                }
+                else if (en.getText().toString().equals("three"))
+                {
+                    im.setImageResource(R.drawable.three);
+                }
+                else if (en.getText().toString().equals("four"))
+                {
+                    im.setImageResource(R.drawable.four);
+                }
+                else if (en.getText().toString().equals("five"))
+                {
+                    im.setImageResource(R.drawable.five);
+                }
+                else if (en.getText().toString().equals("six"))
+                {
+                    im.setImageResource(R.drawable.six);
+                }
+                else if (en.getText().toString().equals("seven"))
+                {
+                    im.setImageResource(R.drawable.seven);
+                }
+                else if (en.getText().toString().equals("eight"))
+                {
+                    im.setImageResource(R.drawable.eight);
+                }
+                else if (en.getText().toString().equals("nine"))
+                {
+                    im.setImageResource(R.drawable.nine);
+                }
+                else if (en.getText().toString().equals("ten"))
+                {
+                    im.setImageResource(R.drawable.ten);
+                }
+
+            }
+        });
+    }
+}
+
+
+
+
+
+</LinearLayout>
